@@ -5,14 +5,14 @@
 @section('content')
     <h1>Editar Post</h1>
 
-    {{-- La ruta debe incluir el objeto $post para saber qué registro actualizar --}}
+    
     <form action="{{ route('posts.update', $post) }}" method="POST">
         @csrf
-        {{-- Laravel necesita @method('PUT') porque los navegadores no soportan PUT directamente --}}
+       
         @method('PUT')
 
         <label for="title">Título</label>
-        {{-- old('campo', $post->campo) intenta mostrar el error de validación, si no, muestra el dato real --}}
+       
         <input type="text" name="title" id="title" value="{{ old('title', $post->title) }}">
 
         <label for="slug">Slug (URL amigable)</label>
